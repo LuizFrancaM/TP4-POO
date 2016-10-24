@@ -31,9 +31,27 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/estilo.css">
+        <link rel="stylesheet" type="text/css" href="css/estilocadastro.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <title>Controle de Cadastro - Fornecedor</title>
     </head>
-    
+    <body>
+
+        <div class="container">
+
+          <br>
+          <ul class="nav nav-pills nav-justified">
+            <center><img src="img/logo.jpg"></center>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="cadastroCliente.jsp">Cadastrar Cliente</a></li>
+            <li class="active"><a href="#">Cadastrar Fornecedor</a></li>
+          </ul>
+        </html>
+        
         <h1>Cadastro Fornecedor</h1><br>
         <form>
             <input type="text" name="txtpesquisar">
@@ -54,7 +72,7 @@
         </fieldset>
         <br>
         
-            <table border="1">
+            <table class="table table-bordered" border="1">
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
@@ -86,6 +104,8 @@
            <% } %>
            </table>
         
-        
-    
+</div>
+                      <%@include file="footer.html"%>
+
+</body>
 </html>
