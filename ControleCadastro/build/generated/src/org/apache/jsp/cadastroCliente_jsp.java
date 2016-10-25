@@ -14,6 +14,11 @@ public final class cadastroCliente_jsp extends org.apache.jasper.runtime.HttpJsp
 
   private static java.util.List<String> _jspx_dependants;
 
+  static {
+    _jspx_dependants = new java.util.ArrayList<String>(1);
+    _jspx_dependants.add("/footer.html");
+  }
+
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
   public java.util.List<String> getDependants() {
@@ -69,24 +74,46 @@ public final class cadastroCliente_jsp extends org.apache.jasper.runtime.HttpJsp
         Database.getClientes().remove(i);
         response.sendRedirect(request.getRequestURI());
     }
-    
 
       out.write("\n");
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("         <link rel=\"stylesheet\" type=\"text/css\" href=\"css/estilo.css\">\n");
+      out.write("         <link rel=\"stylesheet\" type=\"text/css\" href=\"css/estilocadastro.css\">\n");
+      out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n");
+      out.write("        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n");
+      out.write("        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>\n");
+      out.write("        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n");
       out.write("        <title>Controle de Cadastro - Fornecedor</title>\n");
       out.write("    </head>\n");
-      out.write("    \n");
+      out.write("    <body>\n");
+      out.write("        <div class=\"container\">\n");
+      out.write("\n");
+      out.write("          <br>\n");
+      out.write("          <ul class=\"nav nav-pills nav-justified\">\n");
+      out.write("            <center><img src=\"img/logo.jpg\"></center>\n");
+      out.write("            <li><a href=\"index.html\">Home</a></li>\n");
+      out.write("            <li class=\"active\"><a href=\"#\">Cadastrar Cliente</a></li>\n");
+      out.write("            <li><a href=\"cadastroFornecedor.jsp\">Cadastrar Fornecedor</a></li>\n");
+      out.write("          </ul>\n");
+      out.write("        </html>\n");
+      out.write("\n");
       out.write("        <h1>Cadastro Cliente</h1><br>\n");
-      out.write("        \n");
+      out.write("        <!--\n");
+      out.write("            Inputs Cadastrar cliente\n");
+      out.write("        -->\n");
+      out.write("        <form>\n");
+      out.write("            <input type=\"text\" name=\"txtpesquisar\">\n");
+      out.write("            <input type=\"submit\" name=\"subpesquisar\" value=\"Pesquisar\">\n");
+      out.write("        </form>\n");
       out.write("        <br>\n");
       out.write("        <fieldset>\n");
       out.write("            <legend>Entrada de Dados</legend>\n");
       out.write("            <form>\n");
       out.write("                Nome: <input type=\"text\" name=\"nmCliente\"><br>\n");
-      out.write("                Razão Social: <input type=\"text\" name=\"cpfCliente\"><br>\n");
-      out.write("                CNPJ: <input type=\"text\" name=\"rgCliente\"><br>\n");
+      out.write("                CPF: <input type=\"text\" name=\"cpfCliente\"><br>\n");
+      out.write("                RG: <input type=\"text\" name=\"rgCliente\"><br>\n");
       out.write("                Email: <input type=\"text\" name=\"emailCliente\"><br>\n");
       out.write("                Telefone: <input type=\"text\" name=\"telCliente\"><br>\n");
       out.write("                Endereço: <input type=\"text\" name=\"enderecoCliente\"><br>\n");
@@ -94,8 +121,12 @@ public final class cadastroCliente_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("            </form>\n");
       out.write("        </fieldset>\n");
       out.write("        <br>\n");
-      out.write("        \n");
-      out.write("            <table border=\"1\">\n");
+      out.write("            \n");
+      out.write("        <!-- \n");
+      out.write("            Exibição dados\n");
+      out.write("        -->\n");
+      out.write("        <div class=\"container\">\n");
+      out.write("            <table class=\"table table-bordered\" border=\"1\">\n");
       out.write("            <tr>\n");
       out.write("                <th>ID</th>\n");
       out.write("                <th>Nome</th>\n");
@@ -107,12 +138,15 @@ public final class cadastroCliente_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                <th>Comandos</th>\n");
       out.write("            </tr>\n");
       out.write("            \n");
+      out.write("        <!-- \n");
+      out.write("            Exibição dados\n");
+      out.write("        -->\n");
       out.write("            ");
  for (Cliente c: Database.getClientes()){ 
       out.write("\n");
       out.write("            <tr>\n");
       out.write("                ");
- int i = Database.getFornecedores().indexOf(c); 
+ int i = Database.getClientes().indexOf(c); 
       out.write("\n");
       out.write("                <td>");
       out.print( i );
@@ -142,15 +176,47 @@ public final class cadastroCliente_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("\"/>\n");
       out.write("                        <input type=\"submit\" name=\"excluir\" value=\"Excluir\"/>\n");
       out.write("                    </form>\n");
+      out.write("                    <form>\n");
+      out.write("                        <input type=\"hidden\" name=\"i\" value=\"");
+      out.print(i);
+      out.write("\"/>\n");
+      out.write("                        <input type=\"hidden\" name=\"cNome\" value=\"");
+      out.print(c.getNome());
+      out.write("\"/>\n");
+      out.write("                        <input type=\"hidden\" name=\"Cpf\" value=\"");
+      out.print(c.getCpf());
+      out.write("\"/>\n");
+      out.write("                        <input type=\"hidden\" name=\"Rg\" value=\"");
+      out.print(c.getRg());
+      out.write("\"/>\n");
+      out.write("                        <input type=\"hidden\" name=\"Email\" value=\"");
+      out.print(c.getEmail());
+      out.write("\"/>\n");
+      out.write("                        <input type=\"hidden\" name=\"Telefone\" value=\"");
+      out.print(c.getTelefone());
+      out.write("\"/>\n");
+      out.write("                        <input type=\"hidden\" name=\"Endereço\" value=\"");
+      out.print(c.getEndereço());
+      out.write("\"/>\n");
+      out.write("                        <input type=\"submit\" name=\"alterar\" value=\"Alterar\" method=\"alterarCliente.jsp\"/>\n");
+      out.write("                    </form>\n");
       out.write("                </td>                \n");
       out.write("            </tr>\n");
       out.write("           ");
  } 
       out.write("\n");
       out.write("           </table>\n");
-      out.write("        \n");
-      out.write("        \n");
-      out.write("    \n");
+      out.write("        </div>\n");
+      out.write("           \n");
+      out.write("           \n");
+      out.write("           \n");
+      out.write("</div>\n");
+      out.write("           ");
+      out.write("<div class=\"footer\">\n");
+      out.write("  PÃ¡gina realizada para a disciplina de POO.<br> Fatec PG - 2016\n");
+      out.write("</div>\n");
+      out.write("\n");
+      out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

@@ -1,0 +1,18 @@
+input{
+	border-radius: 4px;
+	box-shadow: none;
+	padding:5px;
+margin-top: 20px;
+margin-bottom: 20px;
+}
+input[type=submit]{
+	border-color: none;
+	background-color:#347ab8;
+	border-radius: 10px;	
+	color:white;
+	padding:10px;
+
+}
+input{
+	margin-bottom: 200px;
+}

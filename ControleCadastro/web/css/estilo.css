@@ -1,0 +1,25 @@
+li{
+font-family: verdana;
+color: #ff0000;
+	border-radius: 0px;
+}
+
+.equipe{
+margin-top: 20px;
+font-size: 30px;
+font-family: verdana;
+text-align: center;
+color: #4c4a4a;
+
+}
+
+img{
+	text-align: center;
+}
+
+.footer{
+position: absolute;
+bottom:0;
+width:100%;
+text-align: center;
+}

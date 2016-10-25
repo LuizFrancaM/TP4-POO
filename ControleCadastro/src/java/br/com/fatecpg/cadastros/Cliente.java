@@ -7,7 +7,7 @@ package br.com.fatecpg.cadastros;
 
 /**
  *
- * @author Luiz
+ * @author Bruno
  */
 public class Cliente {
     private String nome;
