@@ -16,7 +16,7 @@
   <br>
   <ul class="nav nav-pills nav-justified">
     <center><img src="img/logo.jpg" alt="..."></center>
-    <li class="active"><a href="index.html">Home</a></li>
+    <li class="active"><a href="#">Home</a></li>
     <li><a href="cadastroCliente.jsp">Cadastrar Cliente</a></li>
     <li><a href="cadastroFornecedor.jsp">Cadastrar Fornecedor</a></li>
   </ul>
