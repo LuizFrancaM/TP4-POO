@@ -1,0 +1,52 @@
+.titulo{
+	margin-top: 40px;
+	margin-left: 100px;
+	color:#0b2459;
+	font-family: verdana;
+	}
+
+#conteudo-right{
+float:right;
+margin-right: 100px;
+margin-top: 40px;
+font-size: 20px;
+}
+
+#conteudo-left{
+	margin-left: 100px;
+	float:left;
+	margin-top: 40px;
+	font-size: 20px;
+}
+
+label.func{
+	display: inline-block;
+	width: 150px;
+}
+
+label.funcs{
+	display: inline-block;
+	width:144px;
+}
+
+input{
+	box-shadow: none;
+	outline-style: none;
+	box-decoration-break: none;
+	border-color: black;
+	padding: 2px;
+	margin-top: 10px;
+}
+
+input[type="submit"] {
+	border-color: white;
+}
+
+.incluir{
+	margin-left: 328px;
+	margin-bottom: 30px;
+}
+
+.pesquisar{
+	margin-left: 140px;
+}

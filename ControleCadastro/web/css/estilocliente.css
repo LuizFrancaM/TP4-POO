@@ -1,0 +1,36 @@
+.titulo{
+	margin-top: -2px;
+	color:#0b2459;
+	font-family: verdana;
+	}
+
+#conteudo{
+float:left;
+margin-left: 100px;
+margin-top: 40px;
+font-size: 20px;
+}
+
+
+label.cliente{
+	display: inline-block;
+	width: 150px;
+}
+
+
+input{
+	box-shadow: none;
+	outline-style: none;
+	box-decoration-break: none;
+	border-color: black;
+	padding: 2px;
+	margin-top: 10px;
+}
+
+input[type="submit"] {
+	border-color: white;
+}
+
+.incluir{
+	margin-left: 328px;
+}

@@ -33,6 +33,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/estilo.css">
         <link rel="stylesheet" type="text/css" href="css/estilocadastro.css">
+        <link rel="stylesheet" type="text/css" href="css/estilofornecedor.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -46,32 +47,37 @@
           <br>
           <ul class="nav nav-pills nav-justified">
             <center><img src="img/logo.jpg"></center>
-            <li><a href="index.php">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="cadastroCliente.jsp">Cadastrar Cliente</a></li>
-            <li class="active"><a href="#">Cadastrar Fornecedor</a></li>
+            <li class="active"><a href="cadastroFornecedor.jsp">Cadastrar Fornecedor</a></li>
           </ul>
         </html>
-        
-        <h1>Cadastro Fornecedor</h1><br>
+       
+        <h1 class="titulo">Cadastro Fornecedor</h1><br>
+                <div id="conteudo">
+            <div id="conteudo-right">
         <form>
-            <input type="text" name="txtpesquisar">
-            <input type="submit" name="subpesquisar" value="Pesquisar">
-        </form>
-        <br>
+            <legend>Pesquisar Fornecedor</legend>
+            <input type="text" name="txtpesquisar"><br>
+            <input class="pesquisar" type="submit" name="subpesquisar" value="Pesquisar">
+        </form> 
+            </div>
+            <div id="conteudo-left">
         <fieldset>
             <legend>Entrada de Dados</legend>
             <form>
-                Nome: <input type="text" name="nmFornecedor"><br>
-                Razão Social: <input type="text" name="razaoSocialFornecedor"><br>
-                CNPJ: <input type="text" name="cnpjFornecedor"><br>
-                Email: <input type="text" name="emailFornecedor"><br>
-                Telefone: <input type="text" name="telFornecedor"><br>
-                Endereço: <input type="text" name="endFornecedor"><br>
-                <input type="submit" name="incluir" value="Incluir">
+                <label class="func">Nome </label><input type="text" name="nmFornecedor"><br>
+                <label class="funcs">Razão Social</label> <input type="text" name="razaoSocialFornecedor"><br>
+                <label class="func">CNPJ </label><input type="text" name="cnpjFornecedor"><br>
+                <label class="func">Email </label><input type="text" name="emailFornecedor"><br>
+                <label class="func">Telefone </label><input type="text" name="telFornecedor"><br>
+                <label class="func">Endereço </label><input type="text" name="endFornecedor"><br>
+                <input class="incluir" type="submit" name="incluir" value="Incluir">
             </form>
         </fieldset>
+            </div>
+        </div>
         <br>
-        
             <table class="table table-bordered" border="1">
             <tr>
                 <th>ID</th>
@@ -103,8 +109,7 @@
             </tr>
            <% } %>
            </table>
-        
-</div>
+        </div>  
                       <%@include file="footer.html"%>
 
 </body>

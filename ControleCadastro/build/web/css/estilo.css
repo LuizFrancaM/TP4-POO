@@ -1,3 +1,9 @@
+.explanacao{
+	font-size: 20px;
+	font-family: verdana;
+	color:#666464;
+}
+
 li{
 font-family: verdana;
 color: #ff0000;
@@ -18,8 +24,21 @@ img{
 }
 
 .footer{
-position: absolute;
 bottom:0;
 width:100%;
 text-align: center;
+}
+
+.explanacao{
+	font-size: 20px;
+	font-family: verdana;
+	color:#666464;
+}
+
+.sobre{
+margin-top: 20px;
+font-size: 30px;
+font-family: verdana;
+text-align: center;
+color: #4c4a4a;
 }

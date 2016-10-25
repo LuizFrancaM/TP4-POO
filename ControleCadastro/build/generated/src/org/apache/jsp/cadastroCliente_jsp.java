@@ -14,6 +14,11 @@ public final class cadastroCliente_jsp extends org.apache.jasper.runtime.HttpJsp
 
   private static java.util.List<String> _jspx_dependants;
 
+  static {
+    _jspx_dependants = new java.util.ArrayList<String>(1);
+    _jspx_dependants.add("/footer.html");
+  }
+
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
   public java.util.List<String> getDependants() {
@@ -44,13 +49,13 @@ public final class cadastroCliente_jsp extends org.apache.jasper.runtime.HttpJsp
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html>\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
 
     if (request.getParameter("incluir") != null){
         Cliente c = new Cliente ();
@@ -71,87 +76,112 @@ public final class cadastroCliente_jsp extends org.apache.jasper.runtime.HttpJsp
     }
     
 
-      out.write("\n");
-      out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Controle de Cadastro - Fornecedor</title>\n");
-      out.write("    </head>\n");
-      out.write("    \n");
-      out.write("        <h1>Cadastro Cliente</h1><br>\n");
-      out.write("        \n");
-      out.write("        <br>\n");
-      out.write("        <fieldset>\n");
-      out.write("            <legend>Entrada de Dados</legend>\n");
-      out.write("            <form>\n");
-      out.write("                Nome: <input type=\"text\" name=\"nmCliente\"><br>\n");
-      out.write("                Razão Social: <input type=\"text\" name=\"cpfCliente\"><br>\n");
-      out.write("                CNPJ: <input type=\"text\" name=\"rgCliente\"><br>\n");
-      out.write("                Email: <input type=\"text\" name=\"emailCliente\"><br>\n");
-      out.write("                Telefone: <input type=\"text\" name=\"telCliente\"><br>\n");
-      out.write("                Endereço: <input type=\"text\" name=\"enderecoCliente\"><br>\n");
-      out.write("                <input type=\"submit\" name=\"incluir\" value=\"Incluir\">\n");
-      out.write("            </form>\n");
-      out.write("        </fieldset>\n");
-      out.write("        <br>\n");
-      out.write("        \n");
-      out.write("            <table border=\"1\">\n");
-      out.write("            <tr>\n");
-      out.write("                <th>ID</th>\n");
-      out.write("                <th>Nome</th>\n");
-      out.write("                <th>CPF</th>\n");
-      out.write("                <th>RG</th>\n");
-      out.write("                <th>Email</th>\n");
-      out.write("                <th>Telefone</th>\n");
-      out.write("                <th>Endereço</th>\n");
-      out.write("                <th>Comandos</th>\n");
-      out.write("            </tr>\n");
-      out.write("            \n");
+      out.write("\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("         <link rel=\"stylesheet\" type=\"text/css\" href=\"css/estilo.css\">\r\n");
+      out.write("         <link rel=\"stylesheet\" type=\"text/css\" href=\"css/estilocadastro.css\">\r\n");
+      out.write("         <link rel=\"stylesheet\" type=\"text/css\" href=\"css/estilocliente.css\">\r\n");
+      out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n");
+      out.write("        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\r\n");
+      out.write("        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>\r\n");
+      out.write("        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\r\n");
+      out.write("        <title>Controle de Cadastro - Fornecedor</title>\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <body>\r\n");
+      out.write("        <div class=\"container\">\r\n");
+      out.write("\r\n");
+      out.write("          <br>\r\n");
+      out.write("          <ul class=\"nav nav-pills nav-justified\">\r\n");
+      out.write("            <center><img src=\"img/logo.jpg\"></center>\r\n");
+      out.write("            <li><a href=\"index.html\">Home</a></li>\r\n");
+      out.write("            <li class=\"active\"><a href=\"#\">Cadastrar Cliente</a></li>\r\n");
+      out.write("            <li><a href=\"cadastroFornecedor.jsp\">Cadastrar Fornecedor</a></li>\r\n");
+      out.write("          </ul>\r\n");
+      out.write("        </html>\r\n");
+      out.write("        \r\n");
+      out.write("            <div id=\"conteudo\">\r\n");
+      out.write("        <h1 class=\"titulo\">Cadastro Cliente</h1><br>\r\n");
+      out.write("        \r\n");
+      out.write("        <br>\r\n");
+      out.write("        <fieldset>\r\n");
+      out.write("            <legend>Entrada de Dados</legend>\r\n");
+      out.write("            <form>\r\n");
+      out.write("                <label class=\"cliente\">Nome </label><input type=\"text\" name=\"nmCliente\"><br>\r\n");
+      out.write("                <label class=\"cliente\">CPF </label><input type=\"text\" name=\"cpfCliente\"><br>\r\n");
+      out.write("                <label class=\"cliente\">RG </label><input type=\"text\" name=\"rgCliente\"><br>\r\n");
+      out.write("                <label class=\"cliente\">Email </label><input type=\"text\" name=\"emailCliente\"><br>\r\n");
+      out.write("                <label class=\"cliente\">Telefone </label><input type=\"text\" name=\"telCliente\"><br>\r\n");
+      out.write("                <label class=\"cliente\">Endereço </label><input type=\"text\" name=\"enderecoCliente\"><br>\r\n");
+      out.write("                <input class=\"incluir\" type=\"submit\" name=\"incluir\" value=\"Incluir\">\r\n");
+      out.write("            </form>\r\n");
+      out.write("        </fieldset>\r\n");
+      out.write("        <br>\r\n");
+      out.write("            </div>\r\n");
+      out.write("            <table class=\"table table-bordered\" border=\"1\">\r\n");
+      out.write("            <tr>\r\n");
+      out.write("                <th>ID</th>\r\n");
+      out.write("                <th>Nome</th>\r\n");
+      out.write("                <th>CPF</th>\r\n");
+      out.write("                <th>RG</th>\r\n");
+      out.write("                <th>Email</th>\r\n");
+      out.write("                <th>Telefone</th>\r\n");
+      out.write("                <th>Endereço</th>\r\n");
+      out.write("                <th>Comandos</th>\r\n");
+      out.write("            </tr>\r\n");
+      out.write("            \r\n");
       out.write("            ");
  for (Cliente c: Database.getClientes()){ 
-      out.write("\n");
-      out.write("            <tr>\n");
+      out.write("\r\n");
+      out.write("            <tr>\r\n");
       out.write("                ");
- int i = Database.getFornecedores().indexOf(c); 
-      out.write("\n");
+ int i = Database.getClientes().indexOf(c); 
+      out.write("\r\n");
       out.write("                <td>");
       out.print( i );
-      out.write("</td>\n");
+      out.write("</td>\r\n");
       out.write("                <td>");
       out.print( c.getNome() );
-      out.write("</td>\n");
+      out.write("</td>\r\n");
       out.write("                <td>");
       out.print( c.getCpf() );
-      out.write("</td>\n");
+      out.write("</td>\r\n");
       out.write("                <td>");
       out.print( c.getRg() );
-      out.write("</td>\n");
+      out.write("</td>\r\n");
       out.write("                <td>");
       out.print( c.getEmail() );
-      out.write("</td>\n");
+      out.write("</td>\r\n");
       out.write("                <td>");
       out.print( c.getTelefone() );
-      out.write("</td>\n");
+      out.write("</td>\r\n");
       out.write("                <td>");
       out.print( c.getEndereço() );
-      out.write("</td>\n");
-      out.write("                <td>\n");
-      out.write("                    <form>\n");
+      out.write("</td>\r\n");
+      out.write("                <td>\r\n");
+      out.write("                    <form>\r\n");
       out.write("                        <input type=\"hidden\" name=\"i\" value=\"");
       out.print(i);
-      out.write("\"/>\n");
-      out.write("                        <input type=\"submit\" name=\"excluir\" value=\"Excluir\"/>\n");
-      out.write("                    </form>\n");
-      out.write("                </td>                \n");
-      out.write("            </tr>\n");
+      out.write("\"/>\r\n");
+      out.write("                        <input type=\"submit\" name=\"excluir\" value=\"Excluir\"/>\r\n");
+      out.write("                    </form>\r\n");
+      out.write("                </td>                \r\n");
+      out.write("            </tr>\r\n");
       out.write("           ");
  } 
-      out.write("\n");
-      out.write("           </table>\n");
-      out.write("        \n");
-      out.write("        \n");
-      out.write("    \n");
-      out.write("</html>\n");
+      out.write("\r\n");
+      out.write("           </table>\r\n");
+      out.write("        \r\n");
+      out.write("        \r\n");
+      out.write("        </div>\r\n");
+      out.write("           ");
+      out.write("<div class=\"footer\">\r\n");
+      out.write("  Concretizado cativantemente para o ensino de POO.<br> Fatec PG - 2016\r\n");
+      out.write("</div>\r\n");
+      out.write("\r\n");
+      out.write("    </body>\r\n");
+      out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
