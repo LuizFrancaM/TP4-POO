@@ -13,11 +13,6 @@ public final class cadastroFornecedor_jsp extends org.apache.jasper.runtime.Http
 
   private static java.util.List<String> _jspx_dependants;
 
-  static {
-    _jspx_dependants = new java.util.ArrayList<String>(1);
-    _jspx_dependants.add("/footer.html");
-  }
-
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
   public java.util.List<String> getDependants() {
@@ -99,13 +94,11 @@ public final class cadastroFornecedor_jsp extends org.apache.jasper.runtime.Http
       out.write("          </ul>\r\n");
       out.write("        </html>\r\n");
       out.write("        \r\n");
-      out.write("        <div class=\"col-md-offset-8col-md-4\">\r\n");
       out.write("        <h1>Cadastro Fornecedor</h1><br>\r\n");
       out.write("        <form>\r\n");
       out.write("            <input type=\"text\" name=\"txtpesquisar\">\r\n");
       out.write("            <input type=\"submit\" name=\"subpesquisar\" value=\"Pesquisar\">\r\n");
-      out.write("        </form> \r\n");
-      out.write("        </div>\r\n");
+      out.write("        </form>\r\n");
       out.write("        <br>\r\n");
       out.write("        <fieldset>\r\n");
       out.write("            <legend>Entrada de Dados</legend>\r\n");
@@ -120,7 +113,8 @@ public final class cadastroFornecedor_jsp extends org.apache.jasper.runtime.Http
       out.write("            </form>\r\n");
       out.write("        </fieldset>\r\n");
       out.write("        <br>\r\n");
-      out.write("            <table class=\"table table-bordered\" border=\"1\">\r\n");
+      out.write("        \r\n");
+      out.write("            <table border=\"1\">\r\n");
       out.write("            <tr>\r\n");
       out.write("                <th>ID</th>\r\n");
       out.write("                <th>Nome</th>\r\n");
@@ -173,13 +167,8 @@ public final class cadastroFornecedor_jsp extends org.apache.jasper.runtime.Http
  } 
       out.write("\r\n");
       out.write("           </table>\r\n");
-      out.write("        </div>  \r\n");
-      out.write("                      ");
-      out.write("<div class=\"footer\">\r\n");
-      out.write("  PÃ¡gina realizada para a disciplina de POO.<br> Fatec PG - 2016\r\n");
+      out.write("        \r\n");
       out.write("</div>\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
       out.write("</body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {

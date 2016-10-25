@@ -1,0 +1,10 @@
+Funcionalidades restantes (25/10/16)
+- Alterar
+   - quando clicar alterar aparece um campo com os value dos valores atuais e um botão para confirmar alteração
+- Pesquisar
+   - procura o nome que digitou
+
+Design restante (25/10/16)
+- Design background
+- Corrigir bug footer
+- Alinhar inputs formulários
