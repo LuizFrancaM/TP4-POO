@@ -1,0 +1,23 @@
+SMAP
+cadastroFornecedor_jsp.java
+JSP
+*S JSP
+*F
++ 0 cadastroFornecedor.jsp
+cadastroFornecedor.jsp
++ 1 footer.html
+footer.html
+*L
+5,39:51
+43,73:90
+116:163,3
+117:166
+118,8:167,3
+126:191
+127:192,3
+128,4:195
+132:199,3
+133,3:202
+1#1,4:205
+135#0,5:208
+*E

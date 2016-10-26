@@ -90,12 +90,12 @@ margin-right: 55px;
 
 .incluir{
 	margin-top: 5px;
-	margin-left: 340px;
+	margin-left: 303px;
 }
 
 .altera{
 	margin-top: 4px;
-	margin-left: 220px;
+	margin-left: 280px;
 }
 
 
@@ -124,3 +124,8 @@ label{
 	margin-top: 9px;
 }
 
+.table{
+    margin-bottom:14px;
+    margin-top: 9px;
+
+}

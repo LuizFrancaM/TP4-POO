@@ -55,10 +55,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script>
-            function unhide(){
-                document.getElementById("table").removeAttribute("hidden");
-                document.getElementById("listar").setAttribute("onclick","hide()");
-            }
+        
          </script>
         <title>Controle de Cadastro - Fornecedor</title>
     </head>
@@ -88,14 +85,13 @@
                 <label class="cliente">Endereço </label><input type="text" name="enderecoCliente"/><br>
                 <input class="incluir" type="submit" name="incluir" value="Incluir"/><br>
                 
-                <input id="listar" type="button" name="listar" value="Listar Clientes" onclick="unhide()"/>
             </form>
         </fieldset>
         </div>
         
         <div id="conteudo-right">
              <fieldset>
-            <legend>Modificação de Dados</legend>
+            <legend>Alteração de Dados</legend>
             <form>
                 <label class="cliente">ID </label><input type="text" name="i"/><br>               
                 <label class="cliente">Nome </label><input type="text" name="nmCliente"/><br>
@@ -105,11 +101,10 @@
                 <label class="cliente">Telefone </label><input type="text" name="telCliente"/><br>
                 <label class="cliente">Endereço </label><input type="text" name="enderecoCliente"/><br>
                 <input class="altera" type="submit" name="alterar" value="Alterar"/>
-                <input class="altera2" type="submit" name="excluir" value="Excluir"/>
             </form>
              </fieldset>
         </div>
-            <table hidden id="table" class="table table-bordered" border="1">
+            <table id="table" class="table table-bordered" border="1">
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
@@ -129,7 +124,12 @@
                 <td><%= c.getRg() %></td>
                 <td><%= c.getEmail() %></td>
                 <td><%= c.getTelefone() %></td>
-                <td><%= c.getEndereço() %></td>              
+                <td><%= c.getEndereço() %></td>
+                <td><form>
+                    <input type="hidden" name="i" value="<%= i %>"/>
+                    <input class="altera2" type="submit" name="excluir" value="Excluir"/>
+                    </form>
+                </td>
             </tr>
             
            <% } %>
