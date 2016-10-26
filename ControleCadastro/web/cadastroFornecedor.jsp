@@ -99,10 +99,12 @@
             <legend>Modificação de Dados</legend>
             <form>
                 <label class="cliente">ID </label><input type="text" name="i"/><br>               
-            <label class="cliente">Nome </label><input type="text" name="nmCliente"/><br>
-                <label class="cliente">Email </label><input type="text" name="emailCliente"/><br>
-                <label class="cliente">Telefone </label><input type="text" name="telCliente"/><br>
-                <label class="cliente">Endereço </label><input type="text" name="enderecoCliente"/><br>
+                <label class="cliente">Nome </label><input type="text" name="nmFornecedor"/><br>
+                <label class="cliente">Razão Social</label><input type="text" name="razaoSocialFornecedor"><br>
+                <label class="cliente">CNPJ </label><input type="text" name="cnpjFornecedor"><br>
+                <label class="cliente">Email </label><input type="text" name="emailFornecedor"/><br>
+                <label class="cliente">Telefone </label><input type="text" name="telFornecedor"/><br>
+                <label class="cliente">Endereço </label><input type="text" name="endFornecedor"/><br>
                 <input class="altera" type="submit" name="alterar" value="Alterar"/>
                 <input class="altera2" type="submit" name="excluir" value="Excluir"/>
             </form>

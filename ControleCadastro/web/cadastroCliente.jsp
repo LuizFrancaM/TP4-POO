@@ -97,8 +97,10 @@
              <fieldset>
             <legend>Modificação de Dados</legend>
             <form>
-            <label class="cliente">ID </label><input type="text" name="i"/><br>               
-            <label class="cliente">Nome </label><input type="text" name="nmCliente"/><br>
+                <label class="cliente">ID </label><input type="text" name="i"/><br>               
+                <label class="cliente">Nome </label><input type="text" name="nmCliente"/><br>
+                <label class="cliente">CPF </label><input type="text" name="cpfCliente"/><br>
+                <label class="cliente">RG </label><input type="text" name="rgCliente"/><br>
                 <label class="cliente">Email </label><input type="text" name="emailCliente"/><br>
                 <label class="cliente">Telefone </label><input type="text" name="telCliente"/><br>
                 <label class="cliente">Endereço </label><input type="text" name="enderecoCliente"/><br>
