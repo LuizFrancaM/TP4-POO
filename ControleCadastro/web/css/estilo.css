@@ -27,6 +27,8 @@ img{
 bottom:0;
 width:100%;
 text-align: center;
+position: relative;
+margin-top: 30px;
 }
 
 .explanacao{

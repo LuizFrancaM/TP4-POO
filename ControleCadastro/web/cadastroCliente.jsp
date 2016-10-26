@@ -48,13 +48,18 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-         <link rel="stylesheet" type="text/css" href="css/estilo.css">
          <link rel="stylesheet" type="text/css" href="css/estilocadastro.css">
          <link rel="stylesheet" type="text/css" href="css/estilocliente.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script>
+            function unhide(){
+                document.getElementById("table").removeAttribute("hidden");
+                document.getElementById("listar").setAttribute("onclick","hide()");
+            }
+         </script>
         <title>Controle de Cadastro - Fornecedor</title>
     </head>
     <body>
@@ -75,7 +80,7 @@
         <fieldset>
             <legend>Entrada de Dados</legend>
             <form>
-                <label class="cliente">Nome </label><input type="text" name="nmCliente"/><br>
+                <label class="cliente">Nomes </label><input type="text" name="nmCliente"/><br>
                 <label class="cliente">CPF </label><input type="text" name="cpfCliente"/><br>
                 <label class="cliente">RG </label><input type="text" name="rgCliente"/><br>
                 <label class="cliente">Email </label><input type="text" name="emailCliente"/><br>
@@ -83,13 +88,26 @@
                 <label class="cliente">Endereço </label><input type="text" name="enderecoCliente"/><br>
                 <input class="incluir" type="submit" name="incluir" value="Incluir"/><br>
                 
-                <label class="cliente">ID </label><input type="text" name="i"/><br>
-                <input type="submit" name="alterar" value="Alterar"/>
-                <input type="submit" name="excluir" value="Excluir"/>
+                <input id="listar" type="button" name="listar" value="Listar Clientes" onclick="unhide()"/>
             </form>
         </fieldset>
-
-            <table class="table table-bordered" border="1">
+        </div>
+        
+        <div id="conteudo-right">
+             <fieldset>
+            <legend>Modificação de Dados</legend>
+            <form>
+            <label class="cliente">ID </label><input type="text" name="i"/><br>               
+            <label class="cliente">Nome </label><input type="text" name="nmCliente"/><br>
+                <label class="cliente">Email </label><input type="text" name="emailCliente"/><br>
+                <label class="cliente">Telefone </label><input type="text" name="telCliente"/><br>
+                <label class="cliente">Endereço </label><input type="text" name="enderecoCliente"/><br>
+                <input class="altera" type="submit" name="alterar" value="Alterar"/>
+                <input class="altera2" type="submit" name="excluir" value="Excluir"/>
+            </form>
+             </fieldset>
+        </div>
+            <table hidden id="table" class="table table-bordered" border="1">
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
@@ -117,7 +135,6 @@
         
         
         </div>
-</div>
            <%@include file="footer.html"%>
     </body>
 </html>

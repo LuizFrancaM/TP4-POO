@@ -44,13 +44,23 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/estilo.css">
         <link rel="stylesheet" type="text/css" href="css/estilocadastro.css">
-        <link rel="stylesheet" type="text/css" href="css/estilofornecedor.css">
+        <link rel="stylesheet" type="text/css" href="css/estilocliente.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script>
+            function unhide(){
+                document.getElementById("table").removeAttribute("hidden");
+                document.getElementById("listar").setAttribute("onclick","hide()");
+            }
+             function hide(){
+                document.getElementById("table").setAttribute("hidden");
+                document.getElementById("listar").setAttribute("onclick","unhide()");
+                document.getElementById("listar").setAttribute("value","xxxx");
+            }
+        </script>
         <title>Controle de Cadastro - Fornecedor</title>
     </head>
     <body>
@@ -66,27 +76,41 @@
           </ul>
         </html>
        
-        <h1 class="titulo">Cadastro Fornecedor</h1><br>
+        <h1 class="titulo2">Cadastro Fornecedor</h1><br>
             <div id="conteudo">
         <fieldset>
             <legend>Entrada de Dados</legend>
             <form>
-                <label class="func">Nome </label><input type="text" name="nmFornecedor"><br>
-                <label class="funcs">Razão Social</label> <input type="text" name="razaoSocialFornecedor"><br>
-                <label class="func">CNPJ </label><input type="text" name="cnpjFornecedor"><br>
-                <label class="func">Email </label><input type="text" name="emailFornecedor"><br>
-                <label class="func">Telefone </label><input type="text" name="telFornecedor"><br>
-                <label class="func">Endereço </label><input type="text" name="endFornecedor"><br>
+                <label class="cliente">Nome </label><input type="text" name="nmFornecedor"><br>
+                <label class="clientes">Razão Social</label> <input type="text" name="razaoSocialFornecedor"><br>
+                <label class="cliente">CNPJ </label><input type="text" name="cnpjFornecedor"><br>
+                <label class="cliente">Email </label><input type="text" name="emailFornecedor"><br>
+                <label class="cliente">Telefone </label><input type="text" name="telFornecedor"><br>
+                <label class="cliente">Endereço </label><input type="text" name="endFornecedor"><br>
                 <input class="incluir" type="submit" name="incluir" value="Incluir"><br>
                 
-                <label class="func">ID </label><input type="text" name="i"/><br>
-                <input type="submit" name="alterar" value="Alterar"/>
-                <input type="submit" name="excluir" value="Excluir"/>
+                <input id="listar" type="button" name="listar" value="Listar Fornecedores" onclick="unhide()"/>
             </form>
         </fieldset>
+            </div>
+          
+        <div id="conteudo-right2">
+             <fieldset>
+            <legend>Modificação de Dados</legend>
+            <form>
+                <label class="cliente">ID </label><input type="text" name="i"/><br>               
+            <label class="cliente">Nome </label><input type="text" name="nmCliente"/><br>
+                <label class="cliente">Email </label><input type="text" name="emailCliente"/><br>
+                <label class="cliente">Telefone </label><input type="text" name="telCliente"/><br>
+                <label class="cliente">Endereço </label><input type="text" name="enderecoCliente"/><br>
+                <input class="altera" type="submit" name="alterar" value="Alterar"/>
+                <input class="altera2" type="submit" name="excluir" value="Excluir"/>
+            </form>
+             </fieldset>
+        </div>
         
         <br>
-            <table class="table table-bordered" border="1">
+            <table hidden id="table" class="table table-bordered" border="1">
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
@@ -111,8 +135,7 @@
            <% } %>
            </table>
            </div>
-        </div>  
-                      <%@include file="footer.html"%>
+    <%@include file="footer.html"%>
 
 </body>
 </html>

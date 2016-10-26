@@ -1,3 +1,0 @@
-﻿Atualizações restantes (26/10/16)
-- Optimizar alterar
-- Arrumar design

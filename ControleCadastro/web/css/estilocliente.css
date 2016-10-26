@@ -17,6 +17,10 @@ label.cliente{
 	width: 150px;
 }
 
+label.clientes{
+	margin-right: 22px;
+}
+
 
 input{
 	box-shadow: none;
@@ -31,6 +35,92 @@ input[type="submit"] {
 	border-color: white;
 }
 
-.incluir{
-	margin-left: 328px;
+
+
+input{
+	border-radius: 4px;
+	box-shadow: none;
+	padding:3px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
+
+input[type=submit]{
+	border-color: none;
+	background-color:#347ab8;
+	border-radius: 10px;	
+	color:white;
+	padding:10px;
+
+}
+
+input[type=button]{
+	border-color: none;
+	background-color:#347ab8;
+	border-radius: 10px;	
+	color:white;
+	padding:10px;
+
+}
+
+input{
+	margin-bottom: 200px;
+}
+
+.titulo2{
+	margin-left: 100px;
+	margin-bottom: -15px;
+	margin-top: 28px;
+	color:#0b2459;
+	font-family: verdana;
+}
+
+
+#conteudo-right{
+float:right;
+font-size: 18px;
+margin-top: 115px;
+margin-right: 55px;
+}
+
+#listar{
+	margin-top: 20px;
+	margin-bottom: 8px;
+}
+
+.incluir{
+	margin-top: 5px;
+	margin-left: 340px;
+}
+
+.altera{
+	margin-top: 4px;
+	margin-left: 220px;
+}
+
+
+#conteudo-right2{
+float:right;
+font-size: 18px;
+margin-top: 45px;
+margin-right: 57px;
+margin-left: 90px;
+}
+
+.footer{
+bottom:0;
+width:100%;
+text-align: center;
+}
+
+
+li{
+font-family: verdana;
+color: #ff0000;
+	border-radius: 0px;
+}
+
+label{
+	margin-top: 9px;
+}
+

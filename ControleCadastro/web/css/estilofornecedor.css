@@ -7,7 +7,7 @@
 
 #conteudo-right{
 float:right;
-margin-right: 100px;
+margin-right: 120px;
 margin-top: 40px;
 font-size: 20px;
 }
@@ -49,4 +49,16 @@ input[type="submit"] {
 
 .pesquisar{
 	margin-left: 140px;
+}
+
+.footer{
+bottom:0;
+width:100%;
+text-align: center;
+}
+	
+li{
+font-family: verdana;
+color: #ff0000;
+	border-radius: 0px;
 }
