@@ -74,6 +74,22 @@ public final class cadastroCliente_jsp extends org.apache.jasper.runtime.HttpJsp
         Database.getClientes().remove(i);
         response.sendRedirect(request.getRequestURI());
     }
+    if (request.getParameter("alterar") != null){
+        String par = request.getParameter("i");
+        int i = Integer.parseInt(par);
+        
+        Cliente c = new Cliente ();
+        c.setNome(request.getParameter("nmCliente"));
+        c.setCpf(request.getParameter("cpfCliente"));
+        c.setRg (request.getParameter("rgCliente"));
+        c.setEmail(request.getParameter("emailCliente"));
+        c.setTelefone (request.getParameter("telCliente"));
+        c.setEndereço(request.getParameter("enderecoCliente"));
+        
+        Database.getClientes().set(i,c);
+    }
+    
+    
 
       out.write("\n");
       out.write("<html>\n");
@@ -81,6 +97,7 @@ public final class cadastroCliente_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("         <link rel=\"stylesheet\" type=\"text/css\" href=\"css/estilo.css\">\n");
       out.write("         <link rel=\"stylesheet\" type=\"text/css\" href=\"css/estilocadastro.css\">\n");
+      out.write("         <link rel=\"stylesheet\" type=\"text/css\" href=\"css/estilocliente.css\">\n");
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n");
       out.write("        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n");
       out.write("        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>\n");
@@ -94,38 +111,39 @@ public final class cadastroCliente_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("          <ul class=\"nav nav-pills nav-justified\">\n");
       out.write("            <center><img src=\"img/logo.jpg\"></center>\n");
       out.write("            <li><a href=\"index.html\">Home</a></li>\n");
-      out.write("            <li class=\"active\"><a href=\"#\">Cadastrar Cliente</a></li>\n");
+      out.write("            <li class=\"active\"><a href=\"cadastroCliente.jsp\">Cadastrar Cliente</a></li>\n");
       out.write("            <li><a href=\"cadastroFornecedor.jsp\">Cadastrar Fornecedor</a></li>\n");
       out.write("          </ul>\n");
       out.write("        </html>\n");
-      out.write("\n");
-      out.write("        <h1>Cadastro Cliente</h1><br>\n");
+      out.write("        \n");
+      out.write("        <div id=\"conteudo\">\n");
+      out.write("        <h1 class=\"titulo\">Cadastro Cliente</h1><br>\n");
       out.write("        <!--\n");
-      out.write("            Inputs Cadastrar cliente\n");
-      out.write("        -->\n");
       out.write("        <form>\n");
-      out.write("            <input type=\"text\" name=\"txtpesquisar\">\n");
-      out.write("            <input type=\"submit\" name=\"subpesquisar\" value=\"Pesquisar\">\n");
-      out.write("        </form>\n");
-      out.write("        <br>\n");
+      out.write("            <legend>Alterar Cliente</legend>\n");
+      out.write("            <label class=\"cliente\">Nome </label><input type=\"text\" name=\"nmCliente\"><br>\n");
+      out.write("            <label class=\"cliente\">CPF </label><input type=\"text\" name=\"cpfCliente\"><br>\n");
+      out.write("            <label class=\"cliente\">RG </label><input type=\"text\" name=\"rgCliente\"><br>\n");
+      out.write("            <label class=\"cliente\">Email </label><input type=\"text\" name=\"emailCliente\"><br>\n");
+      out.write("            <label class=\"cliente\">Telefone </label><input type=\"text\" name=\"telCliente\"><br>\n");
+      out.write("            <label class=\"cliente\">Endereço </label><input type=\"text\" name=\"enderecoCliente\"><br>\n");
+      out.write("            <input class=\"incluir\" type=\"submit\" name=\"Alterar\" value=\"Alterar\">\n");
+      out.write("           \n");
+      out.write("        </form> \n");
+      out.write("-->\n");
       out.write("        <fieldset>\n");
       out.write("            <legend>Entrada de Dados</legend>\n");
       out.write("            <form>\n");
-      out.write("                Nome: <input type=\"text\" name=\"nmCliente\"><br>\n");
-      out.write("                CPF: <input type=\"text\" name=\"cpfCliente\"><br>\n");
-      out.write("                RG: <input type=\"text\" name=\"rgCliente\"><br>\n");
-      out.write("                Email: <input type=\"text\" name=\"emailCliente\"><br>\n");
-      out.write("                Telefone: <input type=\"text\" name=\"telCliente\"><br>\n");
-      out.write("                Endereço: <input type=\"text\" name=\"enderecoCliente\"><br>\n");
-      out.write("                <input type=\"submit\" name=\"incluir\" value=\"Incluir\">\n");
-      out.write("            </form>\n");
-      out.write("        </fieldset>\n");
-      out.write("        <br>\n");
+      out.write("                <label class=\"cliente\">Nome </label><input type=\"text\" name=\"nmCliente\"><br>\n");
+      out.write("                <label class=\"cliente\">CPF </label><input type=\"text\" name=\"cpfCliente\"><br>\n");
+      out.write("                <label class=\"cliente\">RG </label><input type=\"text\" name=\"rgCliente\"><br>\n");
+      out.write("                <label class=\"cliente\">Email </label><input type=\"text\" name=\"emailCliente\"><br>\n");
+      out.write("                <label class=\"cliente\">Telefone </label><input type=\"text\" name=\"telCliente\"><br>\n");
+      out.write("                <label class=\"cliente\">Endereço </label><input type=\"text\" name=\"enderecoCliente\"><br>\n");
+      out.write("                <input class=\"incluir\" type=\"submit\" name=\"incluir\" value=\"Incluir\">\n");
       out.write("            \n");
-      out.write("        <!-- \n");
-      out.write("            Exibição dados\n");
-      out.write("        -->\n");
-      out.write("        <div class=\"container\">\n");
+      out.write("        </fieldset>\n");
+      out.write("\n");
       out.write("            <table class=\"table table-bordered\" border=\"1\">\n");
       out.write("            <tr>\n");
       out.write("                <th>ID</th>\n");
@@ -138,9 +156,6 @@ public final class cadastroCliente_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                <th>Comandos</th>\n");
       out.write("            </tr>\n");
       out.write("            \n");
-      out.write("        <!-- \n");
-      out.write("            Exibição dados\n");
-      out.write("        -->\n");
       out.write("            ");
  for (Cliente c: Database.getClientes()){ 
       out.write("\n");
@@ -170,35 +185,12 @@ public final class cadastroCliente_jsp extends org.apache.jasper.runtime.HttpJsp
       out.print( c.getEndereço() );
       out.write("</td>\n");
       out.write("                <td>\n");
-      out.write("                    <form>\n");
+      out.write("                    \n");
       out.write("                        <input type=\"hidden\" name=\"i\" value=\"");
       out.print(i);
       out.write("\"/>\n");
       out.write("                        <input type=\"submit\" name=\"excluir\" value=\"Excluir\"/>\n");
-      out.write("                    </form>\n");
-      out.write("                    <form>\n");
-      out.write("                        <input type=\"hidden\" name=\"i\" value=\"");
-      out.print(i);
-      out.write("\"/>\n");
-      out.write("                        <input type=\"hidden\" name=\"cNome\" value=\"");
-      out.print(c.getNome());
-      out.write("\"/>\n");
-      out.write("                        <input type=\"hidden\" name=\"Cpf\" value=\"");
-      out.print(c.getCpf());
-      out.write("\"/>\n");
-      out.write("                        <input type=\"hidden\" name=\"Rg\" value=\"");
-      out.print(c.getRg());
-      out.write("\"/>\n");
-      out.write("                        <input type=\"hidden\" name=\"Email\" value=\"");
-      out.print(c.getEmail());
-      out.write("\"/>\n");
-      out.write("                        <input type=\"hidden\" name=\"Telefone\" value=\"");
-      out.print(c.getTelefone());
-      out.write("\"/>\n");
-      out.write("                        <input type=\"hidden\" name=\"Endereço\" value=\"");
-      out.print(c.getEndereço());
-      out.write("\"/>\n");
-      out.write("                        <input type=\"submit\" name=\"alterar\" value=\"Alterar\" method=\"alterarCliente.jsp\"/>\n");
+      out.write("                        <input type=\"submit\" name=\"alterar\" value=\"Alterar\"/>\n");
       out.write("                    </form>\n");
       out.write("                </td>                \n");
       out.write("            </tr>\n");
@@ -206,14 +198,13 @@ public final class cadastroCliente_jsp extends org.apache.jasper.runtime.HttpJsp
  } 
       out.write("\n");
       out.write("           </table>\n");
+      out.write("        \n");
+      out.write("        \n");
       out.write("        </div>\n");
-      out.write("           \n");
-      out.write("           \n");
-      out.write("           \n");
       out.write("</div>\n");
       out.write("           ");
       out.write("<div class=\"footer\">\n");
-      out.write("  PÃ¡gina realizada para a disciplina de POO.<br> Fatec PG - 2016\n");
+      out.write("  Concretizado cativantemente para o ensino de POO.<br> Fatec PG - 2016\n");
       out.write("</div>\n");
       out.write("\n");
       out.write("    </body>\n");

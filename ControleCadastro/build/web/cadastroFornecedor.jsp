@@ -26,7 +26,20 @@
         Database.getFornecedores().remove(i);
         response.sendRedirect(request.getRequestURI());
     }
-    
+        if (request.getParameter("alterar") != null){
+        String par = request.getParameter("i");
+        int i = Integer.parseInt(par);
+        
+        Fornecedor f = new Fornecedor ();
+        f.setNome(request.getParameter("nmFornecedor"));
+        f.setRazaoSocial(request.getParameter("razaoSocialFornecedor"));
+        f.setCnpj (request.getParameter("cnpjFornecedor"));
+        f.setEmail(request.getParameter("emailFornecedor"));
+        f.setTelefone (request.getParameter("telFornecedor"));
+        f.setEndereço(request.getParameter("endFornecedor"));
+        Database.getFornecedores().set(i,f);
+        
+    }
 %>
 <html>
     <head>
@@ -54,15 +67,7 @@
         </html>
        
         <h1 class="titulo">Cadastro Fornecedor</h1><br>
-                <div id="conteudo">
-            <div id="conteudo-right">
-        <form>
-            <legend>Pesquisar Fornecedor</legend>
-            <input type="text" name="txtpesquisar"><br>
-            <input class="pesquisar" type="submit" name="subpesquisar" value="Pesquisar">
-        </form> 
-            </div>
-            <div id="conteudo-left">
+            <div id="conteudo">
         <fieldset>
             <legend>Entrada de Dados</legend>
             <form>
@@ -72,11 +77,14 @@
                 <label class="func">Email </label><input type="text" name="emailFornecedor"><br>
                 <label class="func">Telefone </label><input type="text" name="telFornecedor"><br>
                 <label class="func">Endereço </label><input type="text" name="endFornecedor"><br>
-                <input class="incluir" type="submit" name="incluir" value="Incluir">
+                <input class="incluir" type="submit" name="incluir" value="Incluir"><br>
+                
+                <label class="func">ID </label><input type="text" name="i"/><br>
+                <input type="submit" name="alterar" value="Alterar"/>
+                <input type="submit" name="excluir" value="Excluir"/>
             </form>
         </fieldset>
-            </div>
-        </div>
+        
         <br>
             <table class="table table-bordered" border="1">
             <tr>
@@ -87,7 +95,6 @@
                 <th>Email</th>
                 <th>Telefone</th>
                 <th>Endereço</th>
-                <th>Comandos</th>
             </tr>
             
             <% for (Fornecedor f: Database.getFornecedores()){ %>
@@ -99,18 +106,11 @@
                 <td><%= f.getCnpj() %></td>
                 <td><%= f.getEmail() %></td>
                 <td><%= f.getTelefone() %></td>
-                <td><%= f.getEndereço() %></td>
-                <td>
-                    <form>
-                        <input type="hidden" name="i" value="<%=i%>"/>
-                        <input type="submit" name="excluir" value="Excluir"/>
-                        <input type="submit" name="alterar" value="Alterar"/>
-
-                    </form>
-                </td>                
+                <td><%= f.getEndereço() %></td>              
             </tr>
            <% } %>
            </table>
+           </div>
         </div>  
                       <%@include file="footer.html"%>
 

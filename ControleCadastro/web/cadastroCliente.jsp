@@ -1,7 +1,7 @@
 <%-- 
-    Document   : cadastroFornecedor
-    Created on : 12/10/2016, 22:14:28
-    Author     : Luiz
+    Document   : cadastroCliente
+    Created on : 23/10/2016, 20:16:28
+    Author     : Bruno
 --%>
 
 <%@page import="br.com.fatecpg.cadastros.Fornecedor"%>
@@ -27,6 +27,22 @@
         Database.getClientes().remove(i);
         response.sendRedirect(request.getRequestURI());
     }
+    if (request.getParameter("alterar") != null){
+        String par = request.getParameter("i");
+        int i = Integer.parseInt(par);
+        
+        Cliente c = new Cliente ();
+        c.setNome(request.getParameter("nmCliente"));
+        c.setCpf(request.getParameter("cpfCliente"));
+        c.setRg (request.getParameter("rgCliente"));
+        c.setEmail(request.getParameter("emailCliente"));
+        c.setTelefone (request.getParameter("telCliente"));
+        c.setEndereço(request.getParameter("enderecoCliente"));
+        
+        Database.getClientes().set(i,c);
+        
+    }
+    
     
 %>
 <html>
@@ -53,24 +69,26 @@
           </ul>
         </html>
         
-            <div id="conteudo">
+        <div id="conteudo">
         <h1 class="titulo">Cadastro Cliente</h1><br>
         
-        <br>
         <fieldset>
             <legend>Entrada de Dados</legend>
             <form>
-                <label class="cliente">Nome </label><input type="text" name="nmCliente"><br>
-                <label class="cliente">CPF </label><input type="text" name="cpfCliente"><br>
-                <label class="cliente">RG </label><input type="text" name="rgCliente"><br>
-                <label class="cliente">Email </label><input type="text" name="emailCliente"><br>
-                <label class="cliente">Telefone </label><input type="text" name="telCliente"><br>
-                <label class="cliente">Endereço </label><input type="text" name="enderecoCliente"><br>
-                <input class="incluir" type="submit" name="incluir" value="Incluir">
+                <label class="cliente">Nome </label><input type="text" name="nmCliente"/><br>
+                <label class="cliente">CPF </label><input type="text" name="cpfCliente"/><br>
+                <label class="cliente">RG </label><input type="text" name="rgCliente"/><br>
+                <label class="cliente">Email </label><input type="text" name="emailCliente"/><br>
+                <label class="cliente">Telefone </label><input type="text" name="telCliente"/><br>
+                <label class="cliente">Endereço </label><input type="text" name="enderecoCliente"/><br>
+                <input class="incluir" type="submit" name="incluir" value="Incluir"/><br>
+                
+                <label class="cliente">ID </label><input type="text" name="i"/><br>
+                <input type="submit" name="alterar" value="Alterar"/>
+                <input type="submit" name="excluir" value="Excluir"/>
             </form>
         </fieldset>
-        <br>
-            </div>
+
             <table class="table table-bordered" border="1">
             <tr>
                 <th>ID</th>
@@ -80,7 +98,6 @@
                 <th>Email</th>
                 <th>Telefone</th>
                 <th>Endereço</th>
-                <th>Comandos</th>
             </tr>
             
             <% for (Cliente c: Database.getClientes()){ %>
@@ -92,20 +109,15 @@
                 <td><%= c.getRg() %></td>
                 <td><%= c.getEmail() %></td>
                 <td><%= c.getTelefone() %></td>
-                <td><%= c.getEndereço() %></td>
-                <td>
-                    <form>
-                        <input type="hidden" name="i" value="<%=i%>"/>
-                        <input type="submit" name="excluir" value="Excluir"/>
-                        <input type="submit" name="alterar" value="Alterar"/>
-                    </form>
-                </td>                
+                <td><%= c.getEndereço() %></td>              
             </tr>
+            
            <% } %>
            </table>
         
         
         </div>
+</div>
            <%@include file="footer.html"%>
     </body>
 </html>
